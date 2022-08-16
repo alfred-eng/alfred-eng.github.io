@@ -1,0 +1,86 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "api.localytics.com",
+  "basePath" : "/v1",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "apps/d17b9e1149f40c126eb99e7-d3bcb426-7de6-11e7-9312-007c928ca240" : {
+      "get" : {
+        "tags" : [ "ptest" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "ptest",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/ptest"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "ptest" : {
+      "properties" : {
+        "isn_dob_bis_viol" : {
+          "type" : "string"
+        },
+        "boro" : {
+          "type" : "string"
+        },
+        "bin" : {
+          "type" : "string"
+        },
+        "block" : {
+          "type" : "string"
+        },
+        "lot" : {
+          "type" : "string"
+        },
+        "issue_date" : {
+          "type" : "string"
+        },
+        "violation_type_code" : {
+          "type" : "string"
+        },
+        "violation_number" : {
+          "type" : "string"
+        },
+        "house_number" : {
+          "type" : "string"
+        },
+        "street" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "ecb_number" : {
+          "type" : "string"
+        },
+        "number" : {
+          "type" : "string"
+        },
+        "violation_category" : {
+          "type" : "string"
+        },
+        "violation_type" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
