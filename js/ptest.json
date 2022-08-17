@@ -12,7 +12,7 @@
   "basePath" : "/v1",
   "schemes" : [ "https" ],
   "paths" : {
-    "apps/d17b9e1149f40c126eb99e7-d3bcb426-7de6-11e7-9312-007c928ca240" : {
+    "/apps/d17b9e1149f40c126eb99e7-d3bcb426-7de6-11e7-9312-007c928ca240" : {
       "get" : {
         "tags" : [ "ptest" ],
         "summary" : null,
