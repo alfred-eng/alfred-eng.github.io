@@ -12,12 +12,12 @@
   "basePath" : "/v1",
   "schemes" : [ "https" ],
   "paths" : {
-    "/apps/d17b9e1149f40c126eb99e7-d3bcb426-7de6-11e7-9312-007c928ca240" : {
+    "/query?&app_id=d17b9e1149f40c126eb99e7-d3bcb426-7de6-11e7-9312-007c928ca240&metrics=users&dimensions" : {
       "get" : {
-        "tags" : [ "ptest" ],
+        "tags" : [ "localytics_users_by_hour_city" ],
         "summary" : null,
         "description" : null,
-        "operationId" : "ptest",
+        "operationId" : "localytics_users_by_hour_city",
         "produces" : [ "application/json" ],
         "consumes" : [ "application/json" ],
         "parameters" : [ ],
@@ -25,7 +25,7 @@
           "200" : {
             "description" : "successful operation",
             "schema" : {
-              "$ref" : "#/definitions/ptest"
+              "$ref" : "#/definitions/localytics_users_by_hour_city"
             }
           }
         }
@@ -33,52 +33,145 @@
     }
   },
   "definitions" : {
-    "ptest" : {
+    "localytics_users_by_hour_city##results" : {
       "properties" : {
-        "isn_dob_bis_viol" : {
+        "hour" : {
           "type" : "string"
         },
-        "boro" : {
+        "city" : {
           "type" : "string"
         },
-        "bin" : {
+        "users" : {
+          "type" : "number"
+        },
+        "city_name" : {
+          "type" : "string"
+        }
+      }
+    },
+    "localytics_users_by_hour_city##query##conditions" : {
+      "properties" : {
+        "day" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "localytics_users_by_hour_city##query" : {
+      "properties" : {
+        "metrics" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "dimensions" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "conditions" : {
+          "$ref" : "#/definitions/localytics_users_by_hour_city##query##conditions"
+        },
+        "app_id" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "order" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "limit" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "translate" : {
           "type" : "string"
         },
-        "block" : {
+        "comment" : {
           "type" : "string"
         },
-        "lot" : {
+        "sampling_ratio" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "no_aggregate" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "localytics_users_by_hour_city##_links##self" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "localytics_users_by_hour_city##_links##app" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "localytics_users_by_hour_city##_links##root" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "localytics_users_by_hour_city##_links" : {
+      "properties" : {
+        "self" : {
+          "$ref" : "#/definitions/localytics_users_by_hour_city##_links##self"
+        },
+        "app" : {
+          "$ref" : "#/definitions/localytics_users_by_hour_city##_links##app"
+        },
+        "root" : {
+          "$ref" : "#/definitions/localytics_users_by_hour_city##_links##root"
+        }
+      }
+    },
+    "localytics_users_by_hour_city" : {
+      "properties" : {
+        "results" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/localytics_users_by_hour_city##results"
+          }
+        },
+        "app_id" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "comment" : {
           "type" : "string"
         },
-        "issue_date" : {
+        "created_at" : {
           "type" : "string"
         },
-        "violation_type_code" : {
+        "expires_at" : {
           "type" : "string"
         },
-        "violation_number" : {
-          "type" : "string"
+        "truncated" : {
+          "type" : "boolean"
         },
-        "house_number" : {
-          "type" : "string"
+        "query" : {
+          "$ref" : "#/definitions/localytics_users_by_hour_city##query"
         },
-        "street" : {
-          "type" : "string"
-        },
-        "description" : {
-          "type" : "string"
-        },
-        "ecb_number" : {
-          "type" : "string"
-        },
-        "number" : {
-          "type" : "string"
-        },
-        "violation_category" : {
-          "type" : "string"
-        },
-        "violation_type" : {
-          "type" : "string"
+        "_links" : {
+          "$ref" : "#/definitions/localytics_users_by_hour_city##_links"
         }
       }
     }
