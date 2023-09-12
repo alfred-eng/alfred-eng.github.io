@@ -13,8 +13,9 @@
   #selectable { list-style-type: none; margin: 0; padding: 0; width: 450px; }
   body { font-family: Calibri, sans-serif; }
   .header { background: #FECA40; }
-  .x { text-align: center; }
+  .day { text-align: center; }
   .o { background: #2DB92D; }
+  .x { background: #F39814; color: white; }
   </style>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -23,16 +24,22 @@
     $("#selectable").selectable();
     
     var selector;
-	const d = new Date();
+    const d = new Date();
     switch(d.getDay()) {
-      case 1: selector = ".day-mon"; break;
-      case 2: selector = ".day-tue"; break;
-      case 3: selector = ".day-wed"; break;
-      case 4: selector = ".day-thu"; break;
-      case 5: selector = ".day-fri"; break;
+      case 1: selector = ".mon"; break;
+      case 2: selector = ".tue"; break;
+      case 3: selector = ".wed"; break;
+      case 4: selector = ".thu"; break;
+      case 5: selector = ".fri"; break;
     }
-    $(selector).addClass("o");
-    $(selector+".x").addClass("ui-selected");
+    
+    $(selector).each( function() {
+        if($(this).is(":contains('X')")) {
+            $(this).addClass("x");
+        } else {
+            $(this).addClass("o");
+        }
+    } );
     $("th").addClass("header");
   } );
   </script>
@@ -61,47 +68,47 @@
   <tr>
     <td class="ui-widget-content">Puneet Auluck</td>
     <td class="ui-widget-content">Mon, Fri</td>
-    <td class="ui-widget-content day-mon x">X</td>
-    <td class="ui-widget-content day-tue"></td>
-    <td class="ui-widget-content day-wed"></td>
-    <td class="ui-widget-content day-thu"></td>
-    <td class="ui-widget-content day-fri x">X</td>
+    <td class="ui-widget-content day mon">X</td>
+    <td class="ui-widget-content day tue"></td>
+    <td class="ui-widget-content day wed"></td>
+    <td class="ui-widget-content day thu"></td>
+    <td class="ui-widget-content day fri">X</td>
   </tr>
   <tr>
     <td class="ui-widget-content">Kevin Ly</td>
     <td class="ui-widget-content">Mon, Fri</td>
-    <td class="ui-widget-content day-mon x">X</td>
-    <td class="ui-widget-content day-tue"></td>
-    <td class="ui-widget-content day-wed"></td>
-    <td class="ui-widget-content day-thu"></td>
-    <td class="ui-widget-content day-fri x">X</td>
+    <td class="ui-widget-content day mon">X</td>
+    <td class="ui-widget-content day tue"></td>
+    <td class="ui-widget-content day wed"></td>
+    <td class="ui-widget-content day thu"></td>
+    <td class="ui-widget-content day fri">X</td>
   </tr>
   <tr>
     <td class="ui-widget-content">Kevon Gittens</td>
     <td class="ui-widget-content">Wed, Thu</td>
-    <td class="ui-widget-content day-mon"></td>
-    <td class="ui-widget-content day-tue"></td>
-    <td class="ui-widget-content day-wed x">X</td>
-    <td class="ui-widget-content day-thu x">X</td>
-    <td class="ui-widget-content day-fri"></td>
+    <td class="ui-widget-content day mon"></td>
+    <td class="ui-widget-content day tue"></td>
+    <td class="ui-widget-content day wed">X</td>
+    <td class="ui-widget-content day thu">X</td>
+    <td class="ui-widget-content day fri"></td>
   </tr>
   <tr>
     <td class="ui-widget-content">Alfred Eng</td>
     <td class="ui-widget-content">Wed, Fri</td>
-    <td class="ui-widget-content day-mon"></td>
-    <td class="ui-widget-content day-tue"></td>
-    <td class="ui-widget-content day-wed x">X</td>
-    <td class="ui-widget-content day-thu"></td>
-    <td class="ui-widget-content day-fri x">X</td>
+    <td class="ui-widget-content day mon"></td>
+    <td class="ui-widget-content day tue"></td>
+    <td class="ui-widget-content day wed">X</td>
+    <td class="ui-widget-content day thu"></td>
+    <td class="ui-widget-content day fri">X</td>
   </tr>
   <tr>
     <td class="ui-widget-content">Yumin Chen</td>
     <td class="ui-widget-content">Thu, Fri</td>
-    <td class="ui-widget-content day-mon"></td>
-    <td class="ui-widget-content day-tue"></td>
-    <td class="ui-widget-content day-wed"></td>
-    <td class="ui-widget-content day-thu x">X</td>
-    <td class="ui-widget-content day-fri x">X</td>
+    <td class="ui-widget-content day mon"></td>
+    <td class="ui-widget-content day tue"></td>
+    <td class="ui-widget-content day wed"></td>
+    <td class="ui-widget-content day thu">X</td>
+    <td class="ui-widget-content day fri">X</td>
   </tr>
 </table>
 
