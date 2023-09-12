@@ -12,6 +12,7 @@
   #selectable .ui-selected { background: #F39814; color: white; }
   #selectable { list-style-type: none; margin: 0; padding: 0; width: 450px; }
   body { font-family: Calibri, sans-serif; }
+  .header { background: #FECA40; }
   .x { text-align: center; }
   .o { background: #2DB92D; }
   </style>
@@ -21,8 +22,8 @@
   $( function() {
     $("#selectable").selectable();
     
-    const d = new Date();
     var selector;
+	const d = new Date();
     switch(d.getDay()) {
       case 1: selector = ".day-mon"; break;
       case 2: selector = ".day-tue"; break;
@@ -32,7 +33,7 @@
     }
     $(selector).addClass("o");
     $(selector+".x").addClass("ui-selected");
-    $("th").addClass("ui-selecting");
+    $("th").addClass("header");
   } );
   </script>
 </head>
