@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Engineering WFH Matrix</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://jqueryui.com/wp-content/themes/jqueryui.com/style.css?v=2">
+
+  <style>
+  #selectable .ui-selecting { background: #FECA40; }
+  #selectable .ui-selected { background: #F39814; color: white; }
+  #selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+  body { font-family: Calibri, sans-serif; }
+  .x { text-align: center; }
+  .o { background: #2DB92D; }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $("#selectable").selectable();
+    
+    const d = new Date();
+    var selector;
+    switch(d.getDay()) {
+      case 1: selector = ".day-mon"; break;
+      case 2: selector = ".day-tue"; break;
+      case 3: selector = ".day-wed"; break;
+      case 4: selector = ".day-thu"; break;
+      case 5: selector = ".day-fri"; break;
+    }
+    $(selector).addClass("o");
+    $(selector+".x").addClass("ui-selected");
+    $("th").addClass("ui-selecting");
+  } );
+  </script>
+</head>
+<body>
+
+<table class="ui-widget-content" id="selectable">
+  <colgroup>
+    <col span="1" style="width: 30%;">
+    <col span="1" style="width: 20%;">
+    <col span="1" style="width: 10%;">
+    <col span="1" style="width: 10%;">
+    <col span="1" style="width: 10%;">
+    <col span="1" style="width: 10%;">
+    <col span="1" style="width: 10%;">
+  </colgroup>
+  <tr>
+    <th class="ui-widget-content">Name</th>
+    <th class="ui-widget-content">Days</th>
+    <th class="ui-widget-content">Mon</th>
+    <th class="ui-widget-content">Tue</th>
+    <th class="ui-widget-content">Wed</th>
+    <th class="ui-widget-content">Thu</th>
+    <th class="ui-widget-content">Fri</th>
+  </tr>
+  <tr>
+    <td class="ui-widget-content">Puneet Auluck</td>
+    <td class="ui-widget-content">Mon, Fri</td>
+    <td class="ui-widget-content day-mon x">X</td>
+    <td class="ui-widget-content day-tue"></td>
+    <td class="ui-widget-content day-wed"></td>
+    <td class="ui-widget-content day-thu"></td>
+    <td class="ui-widget-content day-fri x">X</td>
+  </tr>
+  <tr>
+    <td class="ui-widget-content">Kevin Ly</td>
+    <td class="ui-widget-content">Mon, Fri</td>
+    <td class="ui-widget-content day-mon x">X</td>
+    <td class="ui-widget-content day-tue"></td>
+    <td class="ui-widget-content day-wed"></td>
+    <td class="ui-widget-content day-thu"></td>
+    <td class="ui-widget-content day-fri x">X</td>
+  </tr>
+  <tr>
+    <td class="ui-widget-content">Kevon Gittens</td>
+    <td class="ui-widget-content">Wed, Thu</td>
+    <td class="ui-widget-content day-mon"></td>
+    <td class="ui-widget-content day-tue"></td>
+    <td class="ui-widget-content day-wed x">X</td>
+    <td class="ui-widget-content day-thu x">X</td>
+    <td class="ui-widget-content day-fri"></td>
+  </tr>
+  <tr>
+    <td class="ui-widget-content">Alfred Eng</td>
+    <td class="ui-widget-content">Wed, Fri</td>
+    <td class="ui-widget-content day-mon"></td>
+    <td class="ui-widget-content day-tue"></td>
+    <td class="ui-widget-content day-wed x">X</td>
+    <td class="ui-widget-content day-thu"></td>
+    <td class="ui-widget-content day-fri x">X</td>
+  </tr>
+  <tr>
+    <td class="ui-widget-content">Yumin Chen</td>
+    <td class="ui-widget-content">Thu, Fri</td>
+    <td class="ui-widget-content day-mon"></td>
+    <td class="ui-widget-content day-tue"></td>
+    <td class="ui-widget-content day-wed"></td>
+    <td class="ui-widget-content day-thu x">X</td>
+    <td class="ui-widget-content day-fri x">X</td>
+  </tr>
+</table>
+
+</body>
+</html>
